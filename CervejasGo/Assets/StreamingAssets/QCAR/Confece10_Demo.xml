@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Madalena" size="1.000000 0.949198" />
+    <ImageTarget name="KrugBeer" size="1.000000 0.709422" />
+    <ImageTarget name="Heineken" size="1.000000 0.706956" />
+    <ImageTarget name="Falke" size="1.000000 0.753650" />
+    <ImageTarget name="Bruder" size="1.000000 0.973958" />
+    <ImageTarget name="backer__34767_zoom" size="1.000000 0.560156" />
+    <ImageTarget name="Axbeer" size="1.000000 0.935791" />
+    <ImageTarget name="Antuerpia" size="1.000000 0.607877" />
+  </Tracking>
+</QCARConfig>
