@@ -9,16 +9,18 @@ namespace Vuforia
     public static class ObjectHandlerHelper
     {
         private static Dictionary<string, GameObject> _imgs;
-        private static GameObject Qtd { get; set; }
+        private static Text _qtd;
+        private static Text Qtd { get { return _qtd ?? (_qtd = GameObject.Find("qtd").GetComponent<Text>()); } }
         public static Dictionary<string, GameObject> Images
         {
             get { return _imgs ?? (_imgs = InitializeImages()); }
         }
         public static void Initilize()
         {
-            Qtd = GameObject.Find("qtd");
+            var a = Qtd;
             foreach (var image in Images)
-                image.Value.SetActive(false);
+                if(image.Key != "Wizard")
+                    image.Value.SetActive(false);
         }
         public static Dictionary<string, GameObject> InitializeImages()
         {
@@ -32,7 +34,7 @@ namespace Vuforia
 
         public static void IncrementQtd()
         {
-            Qtd.GetComponent<Text>().text = ((int.Parse(Qtd.GetComponent<Text>().text) + 1).ToString());
+            Qtd.text = ((int.Parse(Qtd.text) + 1).ToString());
         }
 
         public static void SetActive(string targetName)

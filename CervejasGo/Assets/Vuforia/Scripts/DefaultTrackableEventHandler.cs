@@ -40,9 +40,9 @@ namespace Vuforia
 
         private void Awake()
         {
+            checkin = checkin ?? GameObject.Find("Checkin");
+            button = button ?? GameObject.Find("Button");
             ObjectHandlerHelper.Initilize();
-            checkin = GameObject.Find("Checkin");
-            button = GameObject.Find("Button");
         }
 
 
@@ -114,8 +114,6 @@ namespace Vuforia
             {
                 component.enabled = false;
             }
-
-            ObjectHandlerHelper.IncrementQtd();
         }
 
         #endregion // PRIVATE_METHODS
