@@ -25,15 +25,6 @@ namespace Vuforia
 
         static GameObject checkin = null;
         static GameObject button = null;
-        static GameObject cerveja1 = null;
-        static GameObject cerveja2 = null;
-        static GameObject cerveja3 = null;
-        static GameObject cerveja4 = null;
-        static GameObject cerveja5 = null;
-        static GameObject cerveja6 = null;
-        static GameObject cerveja7 = null;
-        static GameObject cerveja8 = null;
-        
         #region UNTIY_MONOBEHAVIOUR_METHODS
 
         void Start()
@@ -49,16 +40,9 @@ namespace Vuforia
 
         private void Awake()
         {
+            ObjectHandlerHelper.Initilize();
             checkin = GameObject.Find("Checkin");
             button = GameObject.Find("Button");
-            /*cerveja1 = GameObject.Find("riAntuerpia");
-            cerveja2 = GameObject.Find("riAxbeer");
-            cerveja3 = GameObject.Find("ribacker__34767_zoom");
-            cerveja4 = GameObject.Find("riBruder");
-            cerveja5 = GameObject.Find("riFalke");
-            cerveja6 = GameObject.Find("riHeineken");
-            cerveja7 = GameObject.Find("riKrugBeer");
-            cerveja8 = GameObject.Find("riMadalena");*/
         }
 
 
@@ -107,37 +91,10 @@ namespace Vuforia
             {
                 component.enabled = true;
             }
-
-            //ObjectHandlerHelper.Show(mTrackableBehaviour.TrackableName);
             checkin.SetActive(true);
             button.SetActive(true);
-            /*switch (mTrackableBehaviour.TrackableName)
-            {
-                case "page_2":
-                    cerveja1.SetActive(true);
-                    break;
-                case "Axbeer":
-                    cerveja2.SetActive(true);
-                    break;
-                case "backer__34767_zoom":
-                    cerveja3.SetActive(true);
-                    break;
-                case "Bruder":
-                    cerveja4.SetActive(true);
-                    break;
-                case "Falke":
-                    cerveja5.SetActive(true);
-                    break;
-                case "Heineken":
-                    cerveja6.SetActive(true);
-                    break;
-                case "KrugBeer":
-                    cerveja7.SetActive(true);
-                    break;
-                case "Madalena":
-                    cerveja8.SetActive(true);
-                    break;
-            }*/
+            ObjectHandlerHelper.IncrementQtd();
+            ObjectHandlerHelper.SetActive(mTrackableBehaviour.TrackableName);
         }
 
 
@@ -158,7 +115,7 @@ namespace Vuforia
                 component.enabled = false;
             }
 
-
+            ObjectHandlerHelper.IncrementQtd();
         }
 
         #endregion // PRIVATE_METHODS
