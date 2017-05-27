@@ -14,6 +14,8 @@ namespace Vuforia
         private static Text _qtd;
         public static Text Qtd { get { return _qtd ?? (_qtd = GameObject.Find("qtd").GetComponent<Text>()); } }
         private static GameObject _dados;
+        private static GameObject _wizard;
+        private static GameObject _closeW;
         private static List<string> _loadedTargets;
         private static bool _loaded = false;
         private static InputField txtNome;
@@ -22,6 +24,9 @@ namespace Vuforia
         private static InputField txtEndereco;
         private static Text lblSalvo;
         private static Button btnSalvar;
+        private static GameObject _button;
+        private static GameObject _checkin;
+
 
 
         public static Dictionary<string, GameObject> Images
@@ -33,6 +38,11 @@ namespace Vuforia
             var a = Qtd;
             _loadedTargets = _loadedTargets ?? new List<string>();
             _dados = _dados ?? GameObject.Find("Dados");
+            _wizard = _wizard ?? GameObject.Find("Wizard");
+            _closeW = _closeW ?? GameObject.Find("CloseWizard");
+            _button = _button ?? GameObject.Find("Button");
+            _checkin = _checkin ?? GameObject.Find("Checkin");
+
             foreach (var image in Images)
                 if(image.Key != "Wizard")
                     image.Value.SetActive(false);
@@ -105,6 +115,10 @@ namespace Vuforia
             txtEndereco.text = endereco;
             lblSalvo.text = "Dados salvos em " + salvoEm + " \n\n apresente esta tela para um dos organizadores do evento.";
             btnSalvar.gameObject.SetActive(false);
+            _wizard.SetActive(false);
+            _closeW.SetActive(false);
+            _button.SetActive(false);
+            _checkin.SetActive(false);
         }
 
         public static void TryLoadData()
@@ -126,6 +140,12 @@ namespace Vuforia
                         IncrementQtd();
                     }
                 }
+            }
+            if (Qtd.text == "83")
+            {
+                _dados.SetActive(true);
+                tryLoadUserData();
+
             }
         }
 
