@@ -93,7 +93,6 @@ namespace Vuforia
             }
             checkin.SetActive(true);
             button.SetActive(true);
-            ObjectHandlerHelper.IncrementQtd();
             ObjectHandlerHelper.SetActive(mTrackableBehaviour.TrackableName);
         }
 
