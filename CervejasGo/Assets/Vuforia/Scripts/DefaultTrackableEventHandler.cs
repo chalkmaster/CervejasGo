@@ -51,14 +51,14 @@ namespace Vuforia
         {
             checkin = GameObject.Find("Checkin");
             button = GameObject.Find("Button");
-            cerveja1 = GameObject.Find("riAntuerpia");
+            /*cerveja1 = GameObject.Find("riAntuerpia");
             cerveja2 = GameObject.Find("riAxbeer");
             cerveja3 = GameObject.Find("ribacker__34767_zoom");
             cerveja4 = GameObject.Find("riBruder");
             cerveja5 = GameObject.Find("riFalke");
             cerveja6 = GameObject.Find("riHeineken");
             cerveja7 = GameObject.Find("riKrugBeer");
-            cerveja8 = GameObject.Find("riMadalena");
+            cerveja8 = GameObject.Find("riMadalena");*/
         }
 
 
@@ -111,9 +111,9 @@ namespace Vuforia
             //ObjectHandlerHelper.Show(mTrackableBehaviour.TrackableName);
             checkin.SetActive(true);
             button.SetActive(true);
-            switch (mTrackableBehaviour.TrackableName)
+            /*switch (mTrackableBehaviour.TrackableName)
             {
-                case "Antuerpia":
+                case "page_2":
                     cerveja1.SetActive(true);
                     break;
                 case "Axbeer":
@@ -137,7 +137,7 @@ namespace Vuforia
                 case "Madalena":
                     cerveja8.SetActive(true);
                     break;
-            }
+            }*/
         }
 
 
